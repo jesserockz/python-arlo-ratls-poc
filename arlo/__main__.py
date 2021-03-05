@@ -37,7 +37,7 @@ async def initialise() -> None:
     await ratls.refresh_token()
     open = await ratls.open_port()
     if open:
-      time.sleep(1)
+      time.sleep(5)
       recordings = await ratls.get_recordings(START_DATE, END_DATE)
       print(recordings[0])
       path = recordings[0]["presignedContentUrl"]
